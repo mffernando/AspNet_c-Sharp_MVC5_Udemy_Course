@@ -11,7 +11,13 @@ namespace Intro.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(); // return > Views > Home > Index.chstml
+        }
+
+        //new view Contacts (Views > Home > Contacts)
+        public ActionResult Contacts()
+        {
+            return View(); // return > Views > Home > Contacts.cshtml
         }
     }
 }
