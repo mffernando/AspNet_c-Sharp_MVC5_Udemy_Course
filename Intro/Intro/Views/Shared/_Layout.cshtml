@@ -27,6 +27,14 @@
             </div>
         </div>
     </div>
+
+    <!--href html for external link "http://www.google.com"--> 
+    <a href="http://www.google.com" target="_blank">Go to Google Now!</a> <br /> <!--good for external link-->
+    <!--Html.ActionLink (helpers) for internal link-->
+    <!--go to Homepage: -->
+    @Html.ActionLink("Homepage", "Index", "Home") <br /> <!--parameters: 1st name, 2nd object/action and 3rd router/controller-->
+    <!--go to Contacts-->
+    @Html.ActionLink("Go to Contacts", "Contacts", "Home") <br />
     <div class="container body-content">
         @RenderBody()
         <hr />
