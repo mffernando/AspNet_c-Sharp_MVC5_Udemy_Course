@@ -1,4 +1,7 @@
-﻿
+﻿<!--Reference model (1st Project name, 2nd Folder and 3rd class name-->
+@model Intro.Models.Person
+
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,14 +12,60 @@
 <br />
 <br />
 
-<!--Example with ViewData[ ] HomeController.cs-->
+<!-- new form with POST method-->
+<form action="Home/List" method="POST"> <!--HomeControlle Home/List-->
+    <fieldset>
+        <legend>Informations</legend>
+
+        <!--PersonId-->
+        <div>
+            <label for="PersonId">Identification: </label>
+        </div>
+
+        <div>
+            <input type="number" value="@Model.PersonId" name="PersonId" />
+        </div>
+
+        <!--Name-->
+        <div>
+            <label for="Name">Name: </label>
+        </div>
+
+        <div>
+            <input type="text" value="@Model.Name" name="Name" />
+        </div>
+
+        <!--Type-->
+        <div>
+            <label for="Type">Category: </label>
+        </div>
+
+        <div>
+            <input type="text" value="@Model.Type" name="Type" />
+        </div>
+
+        <!-- button submit action Home/List HomeController-->
+        <p><input type="submit" value="Send" /></p>
+
+    </fieldset>
+</form>
+
+
+<!-- start comment
+Typed view
+<p> @Model.PersonId </p>
+<p> @Model.Name </p>
+<p> @Model.Type </p>
+    
+Example with ViewData[ ] HomeController.cs
 <p>ViewData:</p>
 <p> @ViewData["PersonId"] </p>
 <p> @ViewData["Name"] </p>
 <p> @ViewData["Type"] </p>
 
-<!--Example with ViewBag HomeController.cs -->
+Example with ViewBag HomeController.cs
 <p>ViewBag:</p>
 <p> @ViewBag.id </p>
 <p> @ViewBag.name </p>
 <p> @ViewBag.type </p>
+end comment -->
