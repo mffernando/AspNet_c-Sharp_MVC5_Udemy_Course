@@ -36,7 +36,8 @@ namespace Intro.Controllers
         }
 
         //new view Contacts (Views > Home > Contacts)
-        [HttpPost] //http post reference
+        //POST
+        [HttpPost] //http post reference, necessary comment for GET method
         public ActionResult List(int PersonId, string Name, string Type)
         {
             //ViewData
@@ -46,5 +47,6 @@ namespace Intro.Controllers
 
             return View(); // return > Views > Home > List.cshtml
         }
+
     }
 }

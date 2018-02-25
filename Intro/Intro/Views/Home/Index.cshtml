@@ -13,9 +13,49 @@
 <br />
 
 <!-- new form with POST method-->
-<form action="Home/List" method="POST"> <!--HomeControlle Home/List-->
+<form action="Home/List" method="POST">
+    <!--HomeControlle Home/List-->
     <fieldset>
-        <legend>Informations</legend>
+        <legend>POST Method</legend>
+
+        <!--PersonId-->
+        <div>
+            <label for="PersonId">Identification: </label>
+        </div>
+
+        <div>
+            <input type="number" value="@Model.PersonId" name="PersonId" />
+        </div>
+
+        <!--Name-->
+        <div>
+            <label for="Name">Name: </label>
+        </div>
+
+        <div>
+            <input type="text" value="@Model.Name" name="Name" />
+        </div>
+
+        <!--Type-->
+        <div>
+            <label for="Type">Category: </label>
+        </div>
+
+        <div>
+            <input type="text" value="@Model.Type" name="Type" />
+        </div>
+
+        <!-- button submit action Home/List HomeController-->
+        <p><input type="submit" value="Send" /></p>
+
+    </fieldset>
+</form>
+
+<!-- new form with GET method-->
+<form action="Home/List" method="GET">
+    <!--HomeControlle Home/List-->
+    <fieldset>
+        <legend>GET Method</legend>
 
         <!--PersonId-->
         <div>
@@ -56,7 +96,7 @@ Typed view
 <p> @Model.PersonId </p>
 <p> @Model.Name </p>
 <p> @Model.Type </p>
-    
+
 Example with ViewData[ ] HomeController.cs
 <p>ViewData:</p>
 <p> @ViewData["PersonId"] </p>
