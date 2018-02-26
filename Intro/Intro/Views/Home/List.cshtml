@@ -1,4 +1,6 @@
-﻿
+﻿<!--reference to class Person-->
+@model Intro.Models.Person
+
 @{
     ViewBag.Title = "List";
 }
@@ -7,28 +9,35 @@
 
 <!--Person ID-->
 <div>
-    <b>ID</b>
+    <!--<b>ID</b>-->
+    <b>@Html.LabelFor(x=>x.PersonId)</b>
 </div>
 <div>
-    @ViewData["PersonId"];
+    <!--ViewData["PersonId"];-->
+    @Model.PersonId
 </div>
 
 <!--Name-->
 <div>
-    <b>Name</b>
+    <!--<b>Name</b>-->
+    <b>@Html.LabelFor(x => x.Name)</b>
 </div>
 <div>
-    @ViewData["Name"];
+    <!--ViewData["Name"];-->
+    @Model.Name
 </div>
 
 <!--Type-->
 <div>
-    <b>Type</b>
+    <!--<b>Type</b>-->
+    <b>@Html.LabelFor(x => x.Type)</b>
 </div>
 <div>
-    @ViewData["Type"];
+    <!--ViewData["Type"];-->
+    @Model.Type
 </div>
 
 <!--return-->
 
-<a href="~/"> Return </a>
+<!--<a href="~/"> Return </a>-->
+@Html.ActionLink("Return", "Index", "Home");

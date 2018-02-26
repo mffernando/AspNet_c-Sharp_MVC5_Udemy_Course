@@ -13,84 +13,105 @@
 <br />
 
 <!-- new form with POST method-->
-<form action="Home/List" method="POST">
-    <!--HomeControlle Home/List-->
+<!--<form action="Home/List" method="POST">-->
+<!--HomeControlle Home/List-->
+
+<!--start form post-->
+@using (Html.BeginForm("List", "Home", FormMethod.Post))
+{
+
     <fieldset>
         <legend>POST Method</legend>
 
         <!--PersonId-->
         <div>
-            <label for="PersonId">Identification: </label>
+            <!--<label for="PersonId">Identification: </label>-->
+            @Html.LabelFor(x => x.PersonId)
         </div>
 
         <div>
-            <input type="number" value="@Model.PersonId" name="PersonId" />
+            <!--<input type="number" value="@Model.PersonId" name="PersonId" />-->
+            @Html.EditorFor(x=>x.PersonId)
         </div>
 
         <!--Name-->
         <div>
-            <label for="Name">Name: </label>
+            <!--<label for="Name">Name: </label>-->
+            @Html.LabelFor(x => x.Name)
         </div>
 
         <div>
-            <input type="text" value="@Model.Name" name="Name" />
+            <!--<input type="text" value="@Model.Name" name="Name" />-->
+            @Html.EditorFor(x=>x.Name)
         </div>
 
         <!--Type-->
         <div>
-            <label for="Type">Category: </label>
+            <!--<label for="Type">Category: </label>-->
+            @Html.LabelFor(x => x.Type)
         </div>
 
         <div>
-            <input type="text" value="@Model.Type" name="Type" />
+            <!--<input type="text" value="@Model.Type" name="Type" />-->
+            @Html.EditorFor(x=>x.Type)
         </div>
 
         <!-- button submit action Home/List HomeController-->
         <p><input type="submit" value="Send" /></p>
 
     </fieldset>
-</form>
 
+}
+<!--end form-->
+<!--</form>-->
 <!-- new form with GET method-->
-<form action="Home/List" method="GET">
-    <!--HomeControlle Home/List-->
-    <fieldset>
-        <legend>GET Method</legend>
+<!--<form action="Home/List" method="GET">-->
+<!--HomeControlle Home/List-->
+<!--start form get-->
 
-        <!--PersonId-->
-        <div>
-            <label for="PersonId">Identification: </label>
-        </div>
-
-        <div>
-            <input type="number" value="@Model.PersonId" name="PersonId" />
-        </div>
-
-        <!--Name-->
-        <div>
-            <label for="Name">Name: </label>
-        </div>
-
-        <div>
-            <input type="text" value="@Model.Name" name="Name" />
-        </div>
-
-        <!--Type-->
-        <div>
-            <label for="Type">Category: </label>
-        </div>
-
-        <div>
-            <input type="text" value="@Model.Type" name="Type" />
-        </div>
-
-        <!-- button submit action Home/List HomeController-->
-        <p><input type="submit" value="Send" /></p>
-
-    </fieldset>
-</form>
+@using (Html.BeginForm("List", "Home", FormMethod.Get)){
 
 
+
+<fieldset>
+    <legend>GET Method</legend>
+
+    <!--PersonId-->
+    <div>
+        @Html.LabelFor(x => x.PersonId)
+    </div>
+
+    <div>
+        @Html.EditorFor(x => x.PersonId)
+    </div>
+
+    <!--Name-->
+    <div>
+        @Html.LabelFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.EditorFor(x => x.Name)
+    </div>
+
+    <!--Type-->
+    <div>
+        @Html.LabelFor(x => x.Type)
+    </div>
+
+    <div>
+        @Html.EditorFor(x => x.Type)
+    </div>
+
+    <!-- button submit action Home/List HomeController-->
+    <p><input type="submit" value="Send" /></p>
+
+</fieldset>
+
+}
+<!--end form get-->
+
+<!--</form>-->
 <!-- start comment
 Typed view
 <p> @Model.PersonId </p>

@@ -37,7 +37,8 @@ namespace Intro.Controllers
 
         //new view Contacts (Views > Home > Contacts)
         //POST
-        [HttpPost] //http post reference, necessary comment for GET method
+        //[HttpPost] //http post reference, necessary comment for GET method
+        /*
         public ActionResult List(int PersonId, string Name, string Type)
         {
             //ViewData
@@ -46,7 +47,46 @@ namespace Intro.Controllers
             ViewData["Type"] = Type;
 
             return View(); // return > Views > Home > List.cshtml
+            
+        }
+        */
+
+        /*
+        //FormCollection with typed view
+        [HttpPost]
+        public ActionResult List(FormCollection form)
+        {
+            //ViewData
+            ViewData["PersonId"] = form["PersonId"];
+            ViewData["Name"] = form["Name"];
+            ViewData["Type"] = form["Type"];
+
+            return View(); // return > Views > Home > List.cshtml
+
+        }
+        */
+
+        /*
+        [HttpPost]
+        public ActionResult List(Person person)
+        {
+            //ViewData
+            ViewData["PersonId"] = person.PersonId;
+            ViewData["Name"] = person.Name;
+            ViewData["Type"] = person.Type;
+
+            return View(); // return > Views > Home > List.cshtml
+
+        }
+        */
+
+        [HttpPost]
+        public ActionResult List(Person person)
+        {
+            //typed
+            return View(person); // return > Views > Home > List.cshtml
+
         }
 
-    }
+    } 
 }
