@@ -1,0 +1,25 @@
+﻿@model Intro.Models.User
+
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>User Validation</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true) //form validations
+    <fieldset>
+        <legend>User Infos</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+    </fieldset>
+}
+
