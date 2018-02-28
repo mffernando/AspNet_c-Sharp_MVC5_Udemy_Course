@@ -8,18 +8,49 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true) //form validations
-    <fieldset>
-        <legend>User Infos</legend>
+<fieldset>
+    <legend>User Infos</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
+    <!--name-->
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
 
-        <div class="editor-label">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
+    <div class="editor-label">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
 
-    </fieldset>
+    <!--observation-->
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Observation)
+    </div>
+
+    <div class="editor-label">
+        @Html.TextAreaFor(model => model.Observation)
+        @Html.ValidationMessageFor(model => model.Observation)
+    </div>
+
+    <!--age-->
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Age)
+    </div>
+
+    <div class="editor-label">
+        @Html.TextAreaFor(model => model.Age)
+        @Html.ValidationMessageFor(model => model.Age)
+    </div>
+
+    <!--mail-->
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Mail)
+    </div>
+
+    <div class="editor-label">
+        @Html.TextAreaFor(model => model.Mail)
+        @Html.ValidationMessageFor(model => model.Mail)
+    </div>
+
+</fieldset>
 }
 

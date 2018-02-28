@@ -10,7 +10,7 @@ namespace Intro.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        public ActionResult User()
         {
             var user = new User();
             return View(user); //return user view
