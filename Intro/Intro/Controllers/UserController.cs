@@ -17,7 +17,7 @@ namespace Intro.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(User user)
+        public ActionResult User(User user)
         {
             //validation
             if (ModelState.IsValid)

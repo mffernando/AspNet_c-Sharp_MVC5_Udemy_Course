@@ -8,49 +8,88 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true) //form validations
-<fieldset>
-    <legend>User Infos</legend>
+    <fieldset>
+        <legend>User Infos</legend>
 
-    <!--name-->
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Name)
-    </div>
+        <!--name-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
 
-    <div class="editor-label">
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-    </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
 
-    <!--observation-->
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Observation)
-    </div>
+        <!--observation-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Observation)
+        </div>
 
-    <div class="editor-label">
-        @Html.TextAreaFor(model => model.Observation)
-        @Html.ValidationMessageFor(model => model.Observation)
-    </div>
+        <div class="editor-label">
+            @Html.TextAreaFor(model => model.Observation)
+            @Html.ValidationMessageFor(model => model.Observation)
+        </div>
 
-    <!--age-->
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Age)
-    </div>
+        <!--age-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Age)
+        </div>
 
-    <div class="editor-label">
-        @Html.TextAreaFor(model => model.Age)
-        @Html.ValidationMessageFor(model => model.Age)
-    </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
 
-    <!--mail-->
-    <div class="editor-label">
-        @Html.LabelFor(model => model.Mail)
-    </div>
+        <!--mail-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mail)
+        </div>
 
-    <div class="editor-label">
-        @Html.TextAreaFor(model => model.Mail)
-        @Html.ValidationMessageFor(model => model.Mail)
-    </div>
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Mail)
+            @Html.ValidationMessageFor(model => model.Mail)
+        </div>
 
-</fieldset>
+        <!--login-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login)
+        </div>
+
+        <div class="editor-label">
+            @Html.EditorFor(model => model.Login)
+            @Html.ValidationMessageFor(model => model.Login)
+        </div>
+
+        <!--password-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <!--repeat password-->
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RepeatPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.PasswordFor(model => model.RepeatPassword)
+            @Html.ValidationMessageFor(model => model.RepeatPassword)
+        </div>
+
+        <!--button submit-->
+        <p><input type="submit" value="Submit" /></p>
+
+    </fieldset>
+
+    <!--jquery validations-->
+    @section Scripts{ 
+        @Scripts.Render("~/ budles / jqueryval");
+    }
+
 }
 
