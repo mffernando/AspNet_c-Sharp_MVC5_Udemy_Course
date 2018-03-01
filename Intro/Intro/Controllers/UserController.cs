@@ -20,6 +20,19 @@ namespace Intro.Controllers
         public ActionResult User(User user)
         {
             //validation
+            /*
+            //name
+            if (string.IsNullOrEmpty(user.Name))
+            {
+                ModelState.AddModelError("Name", "Name Required!");
+            }
+            //password
+            if (user.Password != user.RepeatPassword)
+            {
+                ModelState.AddModelError("", "Diferent Passwords!");
+            }
+            */
+
             if (ModelState.IsValid)
             { //if true
                 return View("Result", user);

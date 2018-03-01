@@ -13,8 +13,60 @@
     <div class="editor-label">
         @Html.DisplayNameFor(model => model.Name)
     </div>
-
-    <div class="editor-label">
-        
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Name)
     </div>
+
+    <!--observation-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Observation)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Observation)
+    </div>
+
+    <!--age-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Age)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Age)
+    </div>
+
+    <!--mail-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Mail)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Mail)
+    </div>
+
+    <!--login-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <!--password-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <!--repeat password-->
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.RepeatPassword)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.RepeatPassword)
+    </div>
+
+    <!--return homepage-->
+    <p>@Html.ActionLink("Return", "User")</p>
+    
+</fieldset>
 
