@@ -1,6 +1,7 @@
 ﻿using Intro.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -43,6 +44,20 @@ namespace Intro.Controllers
         public ActionResult Result(User user)
         {
             return View(user);
+        }
+
+        public ActionResult UniqueLogin(string login)
+        {
+            //example array (Collection) logins / generic DB
+            var dbExample = new Collection<string>
+            {
+                "Admin",
+                "User",
+                "Teste"
+            };
+            // return a Json
+            // registers lowercase
+            return Json (dbExample.All(x=>x.ToLower() != login.ToLower()), JsonRequestBehavior.AllowGet);
         }
 
     }
