@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Intro.Models
 {
@@ -18,10 +19,12 @@ namespace Intro.Models
         public string Mail { get; set; }
         [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Only letters between 5 - 15 characters!")] // 5 - 10 characters
         [Required(ErrorMessage = "Login Required!")]
+        //function UserController.cs UniqueLogin
+        [Remote("UniqueLogin","User", ErrorMessage="User already exists!")]
         public string Login { get; set; }
         [Required(ErrorMessage = "Password Required!")]
         public string Password { get; set; }
-        [Compare("Password", ErrorMessage ="Different Passwords!")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage="Different Passwords!")]
         public string RepeatPassword { get; set; }
     }
 }
