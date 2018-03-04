@@ -10,10 +10,13 @@ namespace Intro.Models
     {
         [Required(ErrorMessage = "Name Required!")]
         public string Name { get; set; }
-        [StringLength(50, MinimumLength = 5, ErrorMessage ="Min 50 and Max 50 characters!")]
+        [StringLength(50, MinimumLength = 5, ErrorMessage = "Min 50 and Max 50 characters!")]
         public string Observation { get; set; }
+        [Range(18, 70, ErrorMessage = "Age between 18 and 70!")]
         public string Age { get; set; }
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)\.\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Invalid e-mail!")]
         public string Mail { get; set; }
+        [RegularExpression(@"[a-zA-Z]{5, 15}", ErrorMessage = "Only letters between 5 - 15 characters!")] // 5 - 10 characters
         public string Login { get; set; }
         public string Password { get; set; }
         public string RepeatPassword { get; set; }
