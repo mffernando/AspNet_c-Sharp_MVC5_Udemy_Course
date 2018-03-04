@@ -14,11 +14,14 @@ namespace Intro.Models
         public string Observation { get; set; }
         [Range(18, 70, ErrorMessage = "Age between 18 and 70!")]
         public string Age { get; set; }
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)\.\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Invalid e-mail!")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Invalid e-mail!")]
         public string Mail { get; set; }
-        [RegularExpression(@"[a-zA-Z]{5, 15}", ErrorMessage = "Only letters between 5 - 15 characters!")] // 5 - 10 characters
+        [RegularExpression(@"[a-zA-Z]{5,15}", ErrorMessage = "Only letters between 5 - 15 characters!")] // 5 - 10 characters
+        [Required(ErrorMessage = "Login Required!")]
         public string Login { get; set; }
+        [Required(ErrorMessage = "Password Required!")]
         public string Password { get; set; }
+        [Compare("Password", ErrorMessage ="Different Passwords!")]
         public string RepeatPassword { get; set; }
     }
 }
